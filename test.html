@@ -37,6 +37,21 @@
     console.log("5.========= 반복하기");
     const a5 = [1, 2, 3];
     const b5 = a5.map((e) => e+10);
+
+    const users = [
+        {id:1, name:"fall", phone:"222"},
+        {id:2, name:"mark", phone:"333"},
+        {id:3, name:"harry", phone:"444"},
+    ];
+
+    const updateUserDto = {
+        id:2, name:"steve"
+    }
+
+    const newUsers = users.map(u => u.id === updateUserDto.id ? {...u, ...updateUserDto} :u);
+
+    
+
 </script>    
     
 </body>
