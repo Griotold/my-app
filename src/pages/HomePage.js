@@ -6,7 +6,7 @@ import Home from '../components/home/Home';
 const HomePage = () => {
     // http 요청
     const [boards, setBoards] = useState([]);
-    const [number, setNumber] = useState(0);
+    const [user, setUser] = useState({});
 
     useEffect(() => {
         // 다운로드 가정
@@ -17,17 +17,13 @@ const HomePage = () => {
         ];
 
         setBoards([...data]);
+        setUser({ id: 1, username: 'ssar' });
     }, []);
 
     return (
         <div>
             <Header />
-            <Home
-                boards={boards}
-                setBoards={setBoards}
-                number={number}
-                setNumber={setNumber}
-            />
+            <Home boards={boards} setBoards={setBoards} user={user} />
             <Footer />
         </div>
     );

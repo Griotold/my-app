@@ -1,14 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledDeleteButton = styled.button`
+    color: ${(props) => (props.user.username === 'ssar' ? 'blue' : 'red')};
+`;
+
+// Styled 상속
+const StyledAddButton = styled(StyledDeleteButton)`
+    color: ${(props) => (props.user.username === 'ssar' ? 'blue' : 'red')};
+    background-color: green;
+`;
 
 const Home = (props) => {
     // 구조 분할 할당
-    const { boards, setBoards, number, setNumber } = props;
+    const { boards, setBoards, user } = props;
 
     return (
         <div>
-            <h1>홈 : {number} </h1>
-            <button onClick={() => setNumber(number + 1)}>숫자 증가</button>
-            <button onClick={() => setBoards([])}>전체 삭제</button>
+            <h1>홈</h1>
+            <StyledAddButton user={user}>더하기 버튼</StyledAddButton>
+            <StyledDeleteButton user={user} onClick={() => setBoards([])}>
+                전체 삭제
+            </StyledDeleteButton>
+
             {boards.map((board) => (
                 <h3>
                     제목 : {board.title} 내용 : {board.content}
