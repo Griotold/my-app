@@ -11,7 +11,7 @@ const StyledHeaderDiv = styled.div`
 
 const Header = () => {
     return (
-        <StyledHeaderDiv>
+        <StyledHeaderDiv color>
             <ul>
                 <li>메뉴 1</li>
                 <li>메뉴 2</li>
