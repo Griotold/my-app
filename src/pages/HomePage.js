@@ -20,13 +20,7 @@ const HomePage = () => {
         setUser({ id: 1, username: 'ssar' });
     }, []);
 
-    return (
-        <div>
-            <Header />
-            <Home boards={boards} setBoards={setBoards} user={user} />
-            <Footer />
-        </div>
-    );
+    return <Home boards={boards} setBoards={setBoards} user={user} />;
 };
 
 export default HomePage;
