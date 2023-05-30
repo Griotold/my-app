@@ -1,3 +1,15 @@
-.box-style {
-    color : cyan;
+
+
+.container {
+    height: 700;
+    border: 2px solid black;
+}
+
+.sub_container {
+    height: 250;
+    border: 2px solid black;
+}
+
+div {
+    padding: 10px;
 }
